@@ -11,9 +11,9 @@ class Marque extends Model
     protected $table='marque';
     protected $fillable=[
         'name',
-        'categorie_id',
+        'id_categorie',
     ];
     public function categorie(){
-        return $this->belongsTo(Categorie::class,"categorie_id","id");
+        return $this->belongsTo(Categorie::class,"id_categorie","id");
     }
 }
