@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 </head>
 <body class=" ">
-    <img src="{{asset('images/pexels-steve-johnson-845242.jpg')}}" class="bg" alt="">
+    <img src="{{asset('images/istockphoto-1127130255-2048x2048.webp')}}" class="bg" alt="">
     @if (session('errors'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <ul>

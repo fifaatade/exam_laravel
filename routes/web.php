@@ -6,6 +6,7 @@ use App\Http\Controllers\ModelController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\VoitureController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\CategorieController;
 
 /*
@@ -69,4 +70,12 @@ Route::controller(MarqueController::class)->middleware('auth')->group(function()
     Route::get('/edit/marque/{id}','editMarque')->name('editMarque');
     Route::post('/update/marque/{id}','updateMarque')->name('updateMarque');
     Route::get('delete/marque/{id}','deleteMarque')->name('deleteMarque'); 
+});
+
+Route::controller(LocationController::class)->middleware('auth')->group(function(){
+    Route::get('/location','indexLocation')->name('location');
+    Route::get('/add/location','addLocation')->name('locations');
+    Route::post('store/location',"storeLocation" )->name("storeLocation");    
+    Route::get('/show/location/{id}','showLocation')->name('showLocation');
+    Route::post('store/date',"addDate" )->name("addDate");    
 });

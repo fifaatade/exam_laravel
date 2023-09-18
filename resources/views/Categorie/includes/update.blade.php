@@ -1,6 +1,6 @@
 @if($categorie)
     <div>
-        <a class="btn btn-outline-danger text-body-secondary mt-5 mb-5" href="{{route('categorie')}}">retour</a>
+        <a class="btn btn-danger text-body-secondary mt-5 mb-5" href="{{route('categorie')}}">retour</a>
     </div>
     <form action="{{route('updateCategorie',$categorie['id'])}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="button">
-            <button type="submit" class="btn mt-3 btn-outline-success float-end">modifier</button>
+            <button type="submit" class="btn mt-3 btn-success float-end">modifier</button>
         </div>
     </form>
 @endif

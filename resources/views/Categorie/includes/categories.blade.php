@@ -1,5 +1,5 @@
 <div>
-    <a class="btn btn-outline-danger text-body-secondary mt-5 mb-3" href="{{route('voiture')}}">retour</a>
+    <a class="btn btn-danger text-body-secondary mt-5 mb-3" href="{{route('voiture')}}">retour</a>
 </div>
 <div class="d-flex sidebar">
     <form action="{{route('categorieStore')}}" method="POST" enctype="multipart/form-data" class="me-5 mt-5">
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="button">
-            <button type="submit" class="btn mt-3 btn-outline-success">enrégistrer</button>
+            <button type="submit" class="btn mt-3 btn-success">enrégistrer</button>
         </div>
     </form>
     <table class="table table-striped">
@@ -30,8 +30,8 @@
                     <th scope="row">{{$items['id']}}</th>
                     <td>{{$items['name']}}</td>
                     <td class=" text-center ">
-                        <a class="btn btn-outline-warning mx-2 my-2"  href="{{route('editCategorie',$items['id'])}}" >modifier</a>
-                        <a class="btn btn-outline-danger" href="{{route('deleteCategorie',$items['id'])}}">supprimer</a>
+                        <a class="btn btn-warning mx-2 my-2"  href="{{route('editCategorie',$items['id'])}}" >modifier</a>
+                        <a class="btn btn-danger" href="{{route('deleteCategorie',$items['id'])}}">supprimer</a>
                     </td>                
                 </tr>
             @endforeach

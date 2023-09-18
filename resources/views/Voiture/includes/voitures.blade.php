@@ -1,7 +1,6 @@
 <div class="spaceLink mb-5 mt-5">
-    <a class="btn btn-outline-danger text-body-secondary mt-5 mb-3" href="{{route('home')}}">retour</a>
-    <a class="btn btn-outline-warning text-body-secondary mt-5 mb-3" href="{{route('Voitures')}}">ajouter une voiture</a>
-
+    <a class="btn btn-danger text-body-secondary mt-5 mb-3" href="{{route('home')}}">retour</a>
+    <a class="btn btn-success text-body-secondary mt-5 mb-3" href="{{route('Voitures')}}">ajouter une voiture</a>
 </div>
 <div class="d-flex sidebar">
   <ul class="me-3">
@@ -34,7 +33,7 @@
             <td>{{$items->nom_voiture}}</td>
             <td>{{$items->couleur}}</td>
             <td class=" text-center ">
-              <a class="btn btn-outline-warning mx-2 my-2"  href="{{route('showVoiture',$items['id'])}}" >voir plus</a>
+              <a class="btn btn-info mx-2 my-2"  href="{{route('showVoiture',$items['id'])}}" >voir plus</a>
           </td>                          
         </tr>
         @endforeach

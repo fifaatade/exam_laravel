@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Client;
+use App\Models\Marque;
+use App\Models\Modele;
+use App\Models\Voiture;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Location extends Model
 {
@@ -15,11 +19,19 @@ class Location extends Model
         'date_prevue_retour',
         'date_retour_effectif',
         'id_voiture',
+        'id_modele',
+        'id_marque',
     ];
-    public function clientLoc(){
+    public function client(){
         return $this->belongsTo(Client::class,"id_client","id");
     }
     public function voiture(){
         return $this->belongsTo(Voiture::class,"id_voiture","id");
+    }
+    public function modele(){
+        return $this->belongsTo(Modele::class,"id_modele","id");
+    }
+    public function marqueloc(){
+        return $this->belongsTo(Marque::class,"id_marque","id");
     }
 }

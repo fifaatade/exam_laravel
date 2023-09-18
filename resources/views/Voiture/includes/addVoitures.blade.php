@@ -1,5 +1,5 @@
 <div>
-    <a class="btn btn-outline-danger text-body-secondary mt-5 mb-3" href="{{route('voiture')}}">retour</a>
+    <a class="btn btn-danger text-body-secondary mt-5 mb-3" href="{{route('voiture')}}">retour</a>
 </div>
 <form action="{{route('storeVoiture')}}" method="POST" enctype="multipart/form-data" class="me-5 mt-5">
     @csrf

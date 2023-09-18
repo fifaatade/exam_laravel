@@ -28,7 +28,7 @@
             </div>
             <button type="submit" class="btn btn-success float-end "> S'inscrire</button>
             <div class="">
-                <p class="mt-3 mt-3">Vous avez déjà un compte? <a href="{{route('login')}}">cliquez ici</a></p>
+                <p class="mt-3 mt-3"><b>Vous avez déjà un compte? </b><a href="{{route('login')}}">cliquez ici</a></p>
             </div>
         </form>
     

@@ -1,6 +1,6 @@
 @if($client_list)
     <div class="spaceLink mb-5 mt-5">
-        <a href=""><button type="submit" class="btn btn-success">gestion des locations</button></a>
+        <a href="{{route('location')}}"><button type="submit" class="btn btn-success">gestion des locations</button></a>
         <a href="{{route('voiture')}}"><button type="submit" class="btn btn-primary ">gestion des voitures</button></a>
         <a href="{{route('Client')}}"><button type="submit" class="btn btn-warning ">ajouter un client</button></a>
     </div>

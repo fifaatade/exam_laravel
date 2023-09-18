@@ -26,9 +26,15 @@ nav{
     object-fit: cover;
     width: 100%;
     position: absolute;
-    min-height: 100vh;
     z-index: -1;
-    filter:invert(30%);
+    filter: invert(30%);
+}
+.background{
+    width: 100%;
+    background: linear-gradient(grey, rgb(214, 211, 211));
+    height: 100%;
+    padding-bottom: 6%;
+    min-height: 100vh;
 }
 .form{
     background-color: rgba(240, 248, 255, 0.473);
@@ -43,7 +49,7 @@ nav{
 footer {
     position: fixed;
     width: 100%;
-    bottom: 5px;
+    bottom: 1px;
     left: 0;
     z-index: 1;
 }
@@ -62,17 +68,19 @@ label{
     color: rgb(58, 57, 57);
     margin-top: 25px;
 }
-
+.filter{
+    filter: blur(80%);
+}
 
 h1 { 
   margin:80px 0 10px 0;
   font-size: 52px;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0px #DC143C,
-	2px 2px 0px #DC143C,
-	3px 3px 0px #DC143C,
-	4px 4px 0px #DC143C;
+  text-shadow: 1px 1px 0px #07351e,
+	2px 2px 0px #07351e,
+	3px 3px 0px #07351e,
+	4px 4px 0px #07351e;
 }
 .sidebar{
     display: flex;
@@ -93,4 +101,11 @@ a:hover{
 b{
     color: black;
     text-decoration: underline;
+    margin-right: 30px;
+}
+.show{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
