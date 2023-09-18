@@ -4,11 +4,11 @@
 <div class="d-flex sidebar">
     <form action="{{route('categorieStore')}}" method="POST" enctype="multipart/form-data" class="me-5 mt-5">
         @csrf
+
         <div class="input-group mb-3" style="height: 60px">
-            <span class="input-group-text" style="height: 100%">@</span>
+            <span class="input-group-text" style="height: 100%">catégorie</span>
             <div class="form-floating" style="height: 100%">
                 <input type="text" class="form-control" id="floatingInputGroup1" value="{{old('name')}}" name="name"   placeholder="nom" style="height: 100%">
-                <label for="floatingInputGroup1" style="height: 100%">Nom de la catégorie</label>
             </div>
         </div>
         <div class="button">

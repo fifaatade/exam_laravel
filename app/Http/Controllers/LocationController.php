@@ -52,7 +52,8 @@ class LocationController extends Controller
             'id_client'=>$data['id_client'],
             'id_voiture'=>$data['id_voiture'],
             'id_marque'=>$data['id_marque'],
-            'date_retour_effectif'=>$data['date_prevue_retour']
+            'date_retour_effectif'=>$data['date_prevue_retour'],
+            'status'=>1
         ]);
         return redirect()->route('location')->with('success','nouvelle location sauvegarder avec succès');
     }
@@ -63,13 +64,7 @@ class LocationController extends Controller
         $prenom = $user?$user->prenom:"";
         $voiture=Voiture::all();
         $location=Location::find($id);
-        $ids=idsDB();
-        if($location && in_array($location->id,$ids)){
-            return view('Location.show', compact('voiture','id','nom','prenom','location'));
-        }
-        else{
-            return view('Location.location');
-        }
+        return view('Location.show', compact('voiture','id','nom','prenom','location'));
     }
 
     public function addDate(Request $request,$id) {
@@ -77,27 +72,20 @@ class LocationController extends Controller
         $request->validate([
             "new_date_retour_effectif" => "required",
         ]);
-        $data->update([
-            'date_retour_effectif' => $request->input('new_date_retour_effectif'),
-        ]);
         if ($data['date_retour_effectif']>$data['date_prevue_retour']) {
-            $request->validate([
-                "status"=>"required",
-               ]);
-            $save=Location::create([
+            $data->update([
+                'date_retour_effectif' => $request->input('new_date_retour_effectif'),
                 'status'=>0,
-            ]);            
-            return redirect()->route('location')->with('error','vous etes en retard');
+            ]);
         }
         else{
-            $request->validate([
-                "status"=>"required",
-               ]);
-            $save=Location::create([
+            $data->update([
+                'date_retour_effectif' => $request->input('new_date_retour_effectif'),
                 'status'=>1,
-            ]);            
-            return redirect()->route('location')->with('success','super vous avez là à temps ');
+            ]);
         }
+        return redirect()->route('location');
+
     } 
 
 }

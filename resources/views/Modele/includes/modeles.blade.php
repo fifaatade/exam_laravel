@@ -6,15 +6,11 @@
         @csrf
         <div class="input-group mb-3" style="height: 60px">
             <span class="input-group-text" style="height: 100%">modèle</span>
-            <div class="form-floating" style="height: 100%">
-                <input type="text" class="form-control" id="floatingInputGroup1" value="{{old('modele_name')}}" name="modele_name"   placeholder="nom" style="height: 100%">
-            </div>
+            <input type="text" class="form-control" id="floatingInputGroup1" value="{{old('modele_name')}}" name="modele_name"   placeholder="nom" style="height: 100%">
         </div>
         <div class="input-group mb-3" style="height: 60px">
             <span class="input-group-text" style="height: 100%">année</span>
-            <div class="form-floating" style="height: 100%">
-                <input type="number" class="form-control" id="floatingInputGroup1" value="{{old('annee')}}" name="annee"  style="height: 100%">
-            </div>
+            <input type="number" class="form-control" id="floatingInputGroup1" value="{{old('annee')}}" name="annee"  style="height: 100%">
         </div>
         <select class="form-select mb-3" aria-label="Default select example" name="id_marque" style="width: 100%">
             <option selected>Choisir une marque</option>
