@@ -62,6 +62,7 @@ footer p{
     color: gray;
 }
 table{
+    background-color: white;
     box-shadow: rgba(179, 15, 15, 0.2) 0px 2px 8px 0px;
 }
 label{

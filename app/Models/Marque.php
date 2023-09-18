@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Marque extends Model
 {
@@ -15,5 +16,8 @@ class Marque extends Model
     ];
     public function categorie(){
         return $this->belongsTo(Categorie::class,"id_categorie","id");
+    }
+    public function location(){
+        return $this->hasMany(Location::class,"id_marque","id");
     }
 }

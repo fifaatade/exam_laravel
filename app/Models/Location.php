@@ -21,6 +21,7 @@ class Location extends Model
         'id_voiture',
         'id_modele',
         'id_marque',
+        'status'
     ];
     public function client(){
         return $this->belongsTo(Client::class,"id_client","id");
@@ -31,7 +32,7 @@ class Location extends Model
     public function modele(){
         return $this->belongsTo(Modele::class,"id_modele","id");
     }
-    public function marqueloc(){
+    public function marque(){
         return $this->belongsTo(Marque::class,"id_marque","id");
     }
 }

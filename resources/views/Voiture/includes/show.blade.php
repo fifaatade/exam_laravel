@@ -38,10 +38,6 @@
                 <p class="card-text"><b>frein: </b>{{$voiture['frein']}}</p>
                 <p class="card-text"><b>acceleration: </b>{{$voiture['acceleration']}}</p>
                 <p class="card-text"><b>couleur: </b>{{$voiture['couleur']}}</p>
-                {{-- <div class="float-end">
-                    <a href="{{route('showVoiture',$voiture['id']-1)}}" class="btn btn-secondary text-body-secondary me-3">précédent</a>
-                    <a  href="{{route('showVoiture',$voiture['id']+1)}}" class="btn btn-secondary text-body-secondary">suivant</a>
-                </div> --}}
             </div>
         </div>
     </div>

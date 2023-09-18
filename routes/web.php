@@ -77,5 +77,5 @@ Route::controller(LocationController::class)->middleware('auth')->group(function
     Route::get('/add/location','addLocation')->name('locations');
     Route::post('store/location',"storeLocation" )->name("storeLocation");    
     Route::get('/show/location/{id}','showLocation')->name('showLocation');
-    Route::post('store/date',"addDate" )->name("addDate");    
+    Route::post('store/date/{id}',"addDate" )->name("addDate");    
 });

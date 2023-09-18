@@ -51,7 +51,8 @@ class LocationController extends Controller
             'id_modele'=>$data['id_modele'],
             'id_client'=>$data['id_client'],
             'id_voiture'=>$data['id_voiture'],
-            'date_retour_effectif'=>now()
+            'id_marque'=>$data['id_marque'],
+            'date_retour_effectif'=>$data['date_prevue_retour']
         ]);
         return redirect()->route('location')->with('success','nouvelle location sauvegarder avec succès');
     }
@@ -60,16 +61,43 @@ class LocationController extends Controller
         $user=Auth::user();
         $nom = $user?$user->nom:"";
         $prenom = $user?$user->prenom:"";
-        $voiture=Voiture::find($id);
+        $voiture=Voiture::all();
+        $location=Location::find($id);
         $ids=idsDB();
-        if($voiture && in_array($voiture->id,$ids)){
-            return view('Voiture.show', compact('voiture','id','nom','prenom'));
+        if($location && in_array($location->id,$ids)){
+            return view('Location.show', compact('voiture','id','nom','prenom','location'));
         }
         else{
-            return view('Voiture.voiture');
+            return view('Location.location');
         }
     }
-    public function addDate(){
 
-    }
+    public function addDate(Request $request,$id) {
+        $data=Location::where('id',$id)->first();
+        $request->validate([
+            "new_date_retour_effectif" => "required",
+        ]);
+        $data->update([
+            'date_retour_effectif' => $request->input('new_date_retour_effectif'),
+        ]);
+        if ($data['date_retour_effectif']>$data['date_prevue_retour']) {
+            $request->validate([
+                "status"=>"required",
+               ]);
+            $save=Location::create([
+                'status'=>0,
+            ]);            
+            return redirect()->route('location')->with('error','vous etes en retard');
+        }
+        else{
+            $request->validate([
+                "status"=>"required",
+               ]);
+            $save=Location::create([
+                'status'=>1,
+            ]);            
+            return redirect()->route('location')->with('success','super vous avez là à temps ');
+        }
+    } 
+
 }
