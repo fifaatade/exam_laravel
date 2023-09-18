@@ -1,4 +1,5 @@
 @if($client_list)
+    <h2 class="text-center mt-5" style="color: white">Jennifer ATADE && PAQUI Dieudonné</h2>
     <div class="spaceLink mb-5 mt-5">
         <a href="{{route('location')}}"><button type="submit" class="btn btn-success">gestion des locations</button></a>
         <a href="{{route('voiture')}}"><button type="submit" class="btn btn-primary ">gestion des voitures</button></a>
