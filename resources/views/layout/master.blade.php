@@ -46,7 +46,7 @@
 
       <footer>
         <div class="container">
-            <p>© 2023 GesCar, Inc , votre compagnie automobile..</p>
+            <p>© 2023 GesCar, Inc , votre compagnie automobile.. <em>by</em><h6 class="text-center mt-5" style="color: rgb(34, 54, 17)">Jennifer ATADE && PAQUI Dieudonné</h6></p>
         </div>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js
