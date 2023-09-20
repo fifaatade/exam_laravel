@@ -12,7 +12,7 @@ class ClientController extends Controller
         $user=Auth::user();
         $nom = $user?$user->nom:"";
         $prenom = $user?$user->prenom:"";
-        $client_list=$user->client()->paginate(10);
+        $client_list=$user->client()->paginate(3);
         return view('Client.client', compact( 'nom','prenom','client_list'));
     }
     public function addClient($id=null){
