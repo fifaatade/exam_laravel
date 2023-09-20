@@ -14,7 +14,7 @@
     @if (session('errors'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <ul>
-                    <li>{{session('errors')}}</li><br />
+                    <li>{{session('errors')}}</li><br/>
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
         </div>
@@ -22,7 +22,7 @@
     @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <ul>
-                    <li>{{session('success')}}</li><br />
+                    <li>{{session('success')}}</li><br/>
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
         </div>
