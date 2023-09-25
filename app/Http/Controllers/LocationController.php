@@ -45,17 +45,22 @@ class LocationController extends Controller
             "id_marque"=>"required",
             "id_voiture"=>"required",
            ]);
-        $save=Location::create([
-            'date_sortie_voiture'=>$data['date_sortie_voiture'],
-            'date_prevue_retour'=>$data['date_prevue_retour'],
-            'id_modele'=>$data['id_modele'],
-            'id_client'=>$data['id_client'],
-            'id_voiture'=>$data['id_voiture'],
-            'id_marque'=>$data['id_marque'],
-            'date_retour_effectif'=>$data['date_prevue_retour'],
-            'status'=>1
-        ]);
-        return redirect()->route('location')->with('success','nouvelle location sauvegarder avec succès');
+        if ($data['date_prevue_retour']>$data['date_sortie_voiture']) {
+            $save=Location::create([
+                'date_sortie_voiture'=>$data['date_sortie_voiture'],
+                'date_prevue_retour'=>$data['date_prevue_retour'],
+                'id_modele'=>$data['id_modele'],
+                'id_client'=>$data['id_client'],
+                'id_voiture'=>$data['id_voiture'],
+                'id_marque'=>$data['id_marque'],
+                'date_retour_effectif'=>$data['date_prevue_retour'],
+                'status'=>1
+            ]);
+            return redirect()->route('location')->with('success','nouvelle location sauvegarder avec succès');
+        }
+        else{
+            return redirect()->back()->with('errors','les dates ne concorde pas..!');
+        }
     }
     public function showLocation($id=null)
     {

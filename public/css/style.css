@@ -31,8 +31,8 @@ nav{
 }
 .background{
     width: 100%;
-    background: linear-gradient(rgb(66, 51, 45), rgb(214, 211, 211));
     height: 100%;
+    background-color: aliceblue;
     padding-bottom: 6%;
     min-height: 100vh;
 }
